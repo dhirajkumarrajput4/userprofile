@@ -1,4 +1,5 @@
 package com.userprofile.controller;
+
 import com.userprofile.dao.UserRepository;
 import com.userprofile.entities.JwtRequest;
 import com.userprofile.entities.JwtResponse;
@@ -41,7 +42,6 @@ public class AuthController {
         this.doAuthenticate(request.getEmail(), request.getPassword());
         UserDetails userDetails = userDetailsService.loadUserByUsername(request.getEmail());
         String token = this.helper.generateToken(userDetails);
-
         JwtResponse response = JwtResponse.builder()
                 .jwtToken(token)
                 .username(userDetails.getUsername()).build();
@@ -58,9 +58,11 @@ public class AuthController {
         user.setName(userDto.getName());
         user.setPhone(userDto.getMobile());
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+        user.setRole("USER");
         userRepository.save(user);
         return ResponseEntity.status(HttpStatus.CREATED).body("User registered successfully");
     }
+
     private void doAuthenticate(String email, String password) {
         UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(email, password);
         try {
