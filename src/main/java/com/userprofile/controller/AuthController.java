@@ -20,7 +20,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/api/auth")
+//@CrossOrigin(origins = "http://localhost:3000")
 public class AuthController {
     @Autowired
     private UserDetailsService userDetailsService;
@@ -72,8 +73,5 @@ public class AuthController {
         }
     }
 
-    @ExceptionHandler(BadCredentialsException.class)
-    public String exceptionHandler() {
-        return "Credentials Invalid !!";
-    }
+
 }

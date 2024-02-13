@@ -18,4 +18,5 @@ public class OtpService {
         return otpRepository.findByOtpCodeAndUserId(otpCode, userId)
                 .orElseThrow(() -> new RuntimeException("OTP not found with code: " + otpCode + " and user ID: " + userId));
     }
+
 }
