@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "8f8878f4-31dd-46f9-adb6-53f0a20b9f6b",
+		"name": "Eupheus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25818047"
+	},
+	"item": [
+		{
+			"name": "UserRegister",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Dhiraj\",\r\n    \"mobile\":\"9759642664\",\r\n    \"email\":\"dhiajkumar@gmail.com\",\r\n    \"password\":\"Dhiraj@123\",\r\n    \"address\":\"A12,New delhi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserLogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"dhiajkumar@gmail.com\",\r\n    \"password\":\"Dhiraj@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaGlhamt1bWFyQGdtYWlsLmNvbSIsImlhdCI6MTcwNzc1NjE2MiwiZXhwIjoxNzA3Nzc0MTYyfQ.9DVXw73Ja4bkWeQFDJEh7QV9sp7gNDE52ZI9Q9fV4c0XXH21wp4Q0lY52zfhASqYnNi5PjRNDrAqmBHX2-p_0w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/home/user/test",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"home",
+						"user",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendOtp",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaGlhamt1bWFyQGdtYWlsLmNvbSIsImlhdCI6MTcwNzc1NjE2MiwiZXhwIjoxNzA3Nzc0MTYyfQ.9DVXw73Ja4bkWeQFDJEh7QV9sp7gNDE52ZI9Q9fV4c0XXH21wp4Q0lY52zfhASqYnNi5PjRNDrAqmBHX2-p_0w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/home/user/send",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"home",
+						"user",
+						"send"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidateOtp",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaGlhamt1bWFyQGdtYWlsLmNvbSIsImlhdCI6MTcwNzc1NjE2MiwiZXhwIjoxNzA3Nzc0MTYyfQ.9DVXw73Ja4bkWeQFDJEh7QV9sp7gNDE52ZI9Q9fV4c0XXH21wp4Q0lY52zfhASqYnNi5PjRNDrAqmBHX2-p_0w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/home/user/validate?otp=726863",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"home",
+						"user",
+						"validate"
+					],
+					"query": [
+						{
+							"key": "otp",
+							"value": "726863"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserDetails",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaGlhamt1bWFyQGdtYWlsLmNvbSIsImlhdCI6MTcwNzgwOTM5OSwiZXhwIjoxNzA3ODI3Mzk5fQ.t90PjvWF1WfinW90ymLfmwkEOTfAFXxWMkD5kvBHwh395eG4wOvZu8zC9Ew4TloLZn60lSLLas9jDNgnNrISqQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/home/user/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"home",
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
